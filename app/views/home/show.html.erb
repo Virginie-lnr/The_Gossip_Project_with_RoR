@@ -14,6 +14,11 @@
           <h5 class="card-title text-secondary"> Title : <%= gossip.title%></h5>
           <p class="card-text"> Author: <%= gossip.user.first_name %> </p>
         </div>
+        <div class="card-footer">
+          <p class="small text-muted mr-0">
+            Post by <%= link_to "#{gossip.user.first_name} #{gossip.user.last_name}", root_path(gossip.user.id) %> on <%= gossip.created_at.strftime("%d/%m/%Y") %> at <%= gossip.created_at.strftime("%H:%I") %>.
+          </p>
+        </div>
       </div>
     </div>
   <% end %>
