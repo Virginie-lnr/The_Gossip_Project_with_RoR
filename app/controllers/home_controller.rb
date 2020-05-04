@@ -1,9 +1,8 @@
 class HomeController < ApplicationController
-  def welcome_visitor
-    @first_name = params[:first_name]
+  def show
+    # @gossips = Gossip.all
+    # @first_name = params[:first_name]
+    # @gossip = Gossip.find(params[:id])
+    # @user = User.find(params[:id])
   end
-
-  def gossip
-  end
-  
 end
