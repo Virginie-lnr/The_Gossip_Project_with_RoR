@@ -5,10 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-
 require 'faker'
-
 
 City.destroy_all
 10.times do
@@ -42,15 +39,15 @@ end
 Tag.destroy_all
 10.times do
     tag = Tag.create(
-        title: Faker::App.name
+      title: Faker::App.name
     )
 end 
 
 GossipTag.destroy_all
 30.times do
     gossip_tag = GossipTag.create(
-        gossip: Gossip.all.sample,
-        tag: Tag.all.sample
+      gossip: Gossip.all.sample,
+      tag: Tag.all.sample
     )
 end
 
