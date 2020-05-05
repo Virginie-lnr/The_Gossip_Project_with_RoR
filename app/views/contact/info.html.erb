@@ -1,13 +1,14 @@
 <h1 class="m-2 ml-4">Contact</h1>
 
 <form action="" method="get" class="form-example">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <div class="form-example">
     <label for="name" class="m-2 ml-4">Enter your first name: </label>
-    <input type="text" name="name" id="name" required>
+    <input type="text" name="first_name" id="name" required>
   </div>
   <div class="form-example">
     <label for="last_name" class="m-2 ml-4">Enter your last name: </label>
-    <input type="last_name" name="last_name" id="last_name" required>
+    <input type="text" name="last_name" id="last_name" required>
   </div>
   <div class="form-example">
     <input type="submit" value="Submit" class="m-2 ml-4">

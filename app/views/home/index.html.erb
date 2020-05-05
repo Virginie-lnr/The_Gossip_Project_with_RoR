@@ -8,13 +8,12 @@
 <div class="card-deck">
   <% Gossip.all.each do |gossip| %>
     <div class="col-lg-3 col-md-6 mb-3">
-      <div class="card text-left my-3">
+      <div class="card text-center my-3">
         <div class="card-body">
-          <h5 class="card-title text-info">Gossip n° <%= gossip.id %></h5>
+          <h5 class="card-title ">Gossip n° <%= gossip.id %></h5>
           <h5 class="card-title text-secondary"> Title : <%= gossip.title%></h5>
           <p class="card-text"> Author: <%= gossip.user.first_name %> </p>
-          <p class="card-text"> Content: <%= gossip.content %> </p>
-          <a href="<%=gossip_path(gossip.id)%>" class="btn btn-primary text-center">View gossip</a>
+          <a href="<%=gossip_path(gossip.id)%>" class="btn btn-info text-center">View gossip</a>
         </div>
 
         <div class="card-footer">

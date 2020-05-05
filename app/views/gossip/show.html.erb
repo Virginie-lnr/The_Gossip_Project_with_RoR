@@ -7,12 +7,13 @@
 
   <div class="card">
     <div class="card-header">
-      <%=@gossip.title %>      
+      <p> Title: <%= @gossip.title %> </p>
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
         <p> <%=@gossip.content %> </p>
         <footer class="blockquote-footer">Created at : <%=@gossip.created_at %> in <cite title="Source Title">By : <%=@gossip.user.first_name %></cite></footer>
+        
       </blockquote>
     </div>
   </div>
