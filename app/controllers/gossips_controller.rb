@@ -2,13 +2,23 @@ class GossipsController < ApplicationController
   def new
   end
 
-  def edit
-  end
-
-
   def show  
     id = params[:id].to_i  
     @gossip = Gossip.find_by id: id  
+  end
+
+  def edit
+    @gossip = Gossip.find(params[:id])
+  end
+
+  def update
+    @gossip = Gossip.find(params[:id])
+    gossip_params = params.require(:gossip).permit(:title, :content)
+    if @gossip.update(gossip_params)
+    redirect_to gossips_path
+    else
+      render :edit
+    end
   end
 
   def create
@@ -16,28 +26,24 @@ class GossipsController < ApplicationController
     content: params[:content],
     user: User.find(params[:user]))
     # user: User.find_by(id: 8))
-    @gossip.save
+    if @gossip.save
     redirect_to root_path
+    else 
+      render 'new'
+    end
     
   end
 
-    # user: User.find(params[:user]))
-# @gossip = Gossip.new(params[:post])
-    # if @gossip.save
-    # redirect_to gossips_path
-    # else
-    # render 'new'
-    # end
-
-
-
-  def update
-  end
-
   def destroy
+    @gossip = Gossip.find(params[:id])
+    @gossip.destroy
+    redirect_to gossips_path
   end
 
-  def index
-   
+  def index 
   end
+
+private
+
+
 end

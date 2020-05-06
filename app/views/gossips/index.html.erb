@@ -15,13 +15,15 @@
           <h5 class="card-title ">Gossip n° <%= gossip.id %></h5>
           <h5 class="card-title text-secondary"> Title : <%= gossip.title%></h5>
           <p class="card-text"> Author: <%= gossip.user.first_name %> </p>
-          <a href="<%= gossip_path(gossip.id) %>" class="btn btn-info text-center">View gossip</a>
+          <a href="<%= gossip_path(gossip.id) %>" class="btn btn-info text-center">View gossip</a><br><br>
+          <a href="<%= edit_gossip_path(gossip.id) %>" class="btn btn-outline-secondary text-center">Edit gossip</a><br><br>
+          <a href="<%= gossip_path(gossip.id) %>" class="btn btn-danger text-center" data-confirm="are you sure?" data-method="DELETE">Delete gossip</a>
         </div>
 
         <div class="card-footer">
           <p class="small text-muted mr-0">
             Post by <%= link_to "#{gossip.user.first_name} #{gossip.user.last_name}", user_path(gossip.user.id) %> on <%= gossip.created_at.strftime("%d/%m/%Y") %> at <%= gossip.created_at.strftime("%H:%I") %>.
-            Located: <%= link_to "#{gossip.user.city.name}", root_path %> 
+            Located: <%= link_to "#{gossip.user.city.name}", city_path(gossip.user.city.id) %> 
           </p>
         </div>
 

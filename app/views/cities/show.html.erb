@@ -1,0 +1,33 @@
+<!--
+<h1>Cities#show</h1>
+<p>Find me in app/views/cities/show.html.erb</p>
+-->
+<div class="row text-center justify-content-center mt-5">
+  <div class="card bg-light mb-3" style="width: 25rem;">
+    <h5 class="card-header">City name: <%= @city.name %></h5>
+    <div class="card-body">
+      <p class="card-text">Zip-code: <%= @city.zip_code %></p>
+    </div>
+  </div>
+</div>
+
+<h3 class="text-center mt-5 mb-5">List of gossips for this city:</h3>
+
+<div class="card-deck">
+  <% Gossip.all.select { |gossip| gossip.user.city.id == @city.id }.each do |gossip| %>
+    <div class="col-lg-3 col-md-6 mb-3">
+      <div class="card text-center my-3">
+        <div class="card-body">
+          <h5 class="card-title ">Gossip n° <%= gossip.id %></h5>
+          <h5 class="card-title text-secondary"> Title : <%= gossip.title%></h5>
+          <h6 class="card-title text-secondary"> City : <%= gossip.user.city.name%></h6>
+          <p class="card-text"> Author: <%= gossip.user.first_name %> </p>
+          <p class="card-text">Description: <%= gossip.content %> </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+

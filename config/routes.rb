@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'gossips#index'
-
+  
+  resources :cities
   resources :users
   resources :gossips
 
