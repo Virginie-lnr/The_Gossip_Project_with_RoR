@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :gossips
-
-  root to: 'home#show'
+  root to: 'gossips#index'
 
   #get '/gossips', to: 'gossips#show'
   get '/welcome/:first_name', to: 'welcome#get_username'
