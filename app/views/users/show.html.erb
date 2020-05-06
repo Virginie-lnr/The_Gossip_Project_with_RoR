@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User details</title>
+</head>
+<body>
+
+<h1 class="text-center m-3 mt-5 mb-5 ">User details</h1>
+
+<div class="row text-center justify-content-center">
+    <div class="card border-info mb-3" style="width: 40rem;">
+    <div class="card-header">Author: <%= @user.first_name %> <%= @user.last_name %></div>
+    <div class="card-body text-info">
+      <h5 class="card-title">Description</h5>
+      <p class="card-text"><%=@user.description %></p>
+      <ul class="list-group list-group-flush">
+      <li class="list-group-item">Email: <%=@user.email %></li>
+      <li class="list-group-item">Age : <%=@user.age %></li>
+      <li class="list-group-item">City: <%=@user.city.name %></li>
+    </ul>
+    </div>
+</div>
+
+
+</body>
+</html>
+  
+   
+

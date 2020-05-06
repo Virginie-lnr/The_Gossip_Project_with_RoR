@@ -8,8 +8,7 @@ class GossipsController < ApplicationController
 
   def show  
     id = params[:id].to_i  
-    puts id
-    @gossip = Gossip.find_by id: id    
+    @gossip = Gossip.find_by id: id  
   end
 
   def create
@@ -18,6 +17,7 @@ class GossipsController < ApplicationController
     user: User.find(params[:user]))
     # user: User.find_by(id: 8))
     @gossip.save
+    redirect_to root_path
     
   end
 

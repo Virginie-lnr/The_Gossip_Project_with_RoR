@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :gossips
   root to: 'gossips#index'
 
-  #get '/gossips', to: 'gossips#show'
+  resources :users
+  resources :gossips
+
   get '/welcome/:first_name', to: 'welcome#get_username'
   get '/contact', to: 'contact#info'
   get '/team', to: 'team#presentation'

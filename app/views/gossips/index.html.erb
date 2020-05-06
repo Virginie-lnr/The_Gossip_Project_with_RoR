@@ -1,7 +1,11 @@
 
-<h2 class="m-2 ml-4 mt-4 text-center">Welcome to visitors!</h2>
 
-<p class="m-2 ml-4 mb-5 text-center">Here is the list of gossips with the title, author and content:</p>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 m-2 ml-4 mt-4 text-center">Welcome on the Gossip page!</h1>
+    <p class="lead m-2 ml-4 mb-5 text-center">Here you will find a list of all gossips :</p>
+  </div>
+</div>
 
 <div class="card-deck">
   <% Gossip.all.each do |gossip| %>
@@ -16,7 +20,8 @@
 
         <div class="card-footer">
           <p class="small text-muted mr-0">
-            Post by <%= link_to "#{gossip.user.first_name} #{gossip.user.last_name}", root_path(gossip.user.id) %> on <%= gossip.created_at.strftime("%d/%m/%Y") %> at <%= gossip.created_at.strftime("%H:%I") %>.
+            Post by <%= link_to "#{gossip.user.first_name} #{gossip.user.last_name}", user_path(gossip.user.id) %> on <%= gossip.created_at.strftime("%d/%m/%Y") %> at <%= gossip.created_at.strftime("%H:%I") %>.
+            Located: <%= link_to "#{gossip.user.city.name}", root_path %> 
           </p>
         </div>
 
