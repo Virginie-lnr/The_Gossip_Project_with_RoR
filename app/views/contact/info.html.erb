@@ -1,18 +1,25 @@
-<h1 class="m-2 ml-4">Contact</h1>
+<h1 class="text-center m-3 mt-5 ">Contact</h1>
 
-<form action="" method="get" class="form-example">
-<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <div class="form-example">
-    <label for="name" class="m-2 ml-4">Enter your first name: </label>
-    <input type="text" name="first_name" id="name" required>
+<div class="row justify-content-center">
+  <div class="col-6">
+    <form>
+      <div class="form-group ml-5">
+        <label for="exampleInputFirstName">First name</label>
+        <input type="first_name" class="form-control" id="exampleInputFirstName" aria-describedby="FirstNameHelp">
+      </div>
+      <div class="form-group ml-5">
+        <label for="exampleInputLastName">Last name:</label>
+        <input type="last_name" class="form-control" id="exampleInputLastName">
+      </div>
+      <div class="form-group ml-5 ">
+        <label for="exampleInputRequest">Request</label>
+        <input type="request" class="form-control" id="exampleInputRequest">
+      </div>
+      <div class="row justify-content-center">
+        <button type="submit" class="btn btn-info ml-5">Submit</button>
+      </div>
+    </form>
   </div>
-  <div class="form-example">
-    <label for="last_name" class="m-2 ml-4">Enter your last name: </label>
-    <input type="text" name="last_name" id="last_name" required>
-  </div>
-  <div class="form-example">
-    <input type="submit" value="Submit" class="m-2 ml-4">
-  </div>
-</form>
+</div>
 
 
