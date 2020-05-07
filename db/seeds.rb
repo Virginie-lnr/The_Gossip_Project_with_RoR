@@ -18,12 +18,14 @@ end
 User.destroy_all
 10.times do
   user = User.create(
+    username: Faker::Name.first_name,
     first_name: Faker::Name.first_name, 
     last_name: Faker::Name.last_name, 
     description: Faker::Hipster.sentence, 
     email: Faker::Internet.email,
     age: rand(16..88),
-    city: City.all.sample
+    city: City.all.sample,
+    password: Faker::Lorem.characters(number: 10)
     )
 end
 

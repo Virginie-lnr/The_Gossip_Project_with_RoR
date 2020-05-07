@@ -22,7 +22,7 @@
         <div class="card-footer">
           <p class="small text-muted mr-0">
             Post by <%= link_to "#{gossip.user.first_name} #{gossip.user.last_name}", user_path(gossip.user.id) %> on <%= gossip.created_at.strftime("%d/%m/%Y") %> at <%= gossip.created_at.strftime("%H:%I") %>.
-            <%# Located: <%= link_to "#{gossip.user.city.name}", city_path(gossip.user.city.id) %>  
+            <%# Located: <%= link_to "#{gossip.user.city.name}", city_path(gossip.user.city.id) %> 
           </p>
         </div>
 

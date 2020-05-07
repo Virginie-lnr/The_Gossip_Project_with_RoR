@@ -12,9 +12,11 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def create
-    user_params = params.require(:user).permit(:username, :first_name, :last_name, :email, :password, :password_confirmation)
+  def create    
+    user_params = params.require(:user).permit(:username, :first_name, :last_name, :email, :city_id, :password, :password_confirmation)
      @user = User.new(user_params)
+     @user.city = City.all.find_by(id: params[:city])
+  
      if @user.valid?
       @user.save
       redirect_to root_path, success: 'Your account have been created with success! 🎉'
