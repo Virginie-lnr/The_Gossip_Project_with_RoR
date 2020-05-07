@@ -17,5 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session.destroy
+    redirect_to login_path, success: 'You are now log out'
   end
 end

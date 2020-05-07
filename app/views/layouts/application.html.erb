@@ -19,13 +19,17 @@
   <body> 
 
       <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+      
+      <% if user_signed_in? %>
+
         <a class="navbar-brand" href="<%= root_path %>">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       <div class="collapse navbar-collapse" id="navbarNav">
+
         <ul class="navbar-nav">
-         <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="<%= new_gossip_path %>">Add a gossip</a>
           </li> 
           <li class="nav-item">
@@ -34,14 +38,24 @@
           <li class="nav-item">
             <a class="nav-link" href=" <%= contact_path %> ">Contact</a>
           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="<%= profile_path %>"><%= current_user.username %>' Profile</a>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign out', destroy_session_path, data: {method: :delete}, :class =>"nav-link" %>
+          </li>
+        </ul>
+
+          <% else %>
           <ul class="navbar-nav">
             <li class="nav-item ">
               <a class="nav-link " href="<%= new_user_path %>">Sign up</a>
             </li>
-             <li class="nav-item ">
-              <a class="nav-link " href="<%= new_session_path %>">Connexion</a>
+             <li class="nav-item">
+              <a class="nav-link" href="<%= new_session_path %>">Connexion</a>
             </li>
           </ul>
+          <% end %>
           <!--
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Disabled</a>
@@ -68,10 +82,11 @@
     <%= yield %>
   </div>
 
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- Require JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'%>
+    
   </body>
 </html>

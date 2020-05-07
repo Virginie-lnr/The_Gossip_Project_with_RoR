@@ -35,7 +35,8 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(session[:auth]['id'])
+    # @user = User.find(session[:auth]['id'])
+    @user = current_user
   end
 
   def update

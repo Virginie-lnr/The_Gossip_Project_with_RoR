@@ -1,12 +1,9 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
-
 <div class="container mt-5">
  <div class="card">
   <div class="card-header mb-3">Sign in</div>
   <div class="card-body">
   
-  <%= form_for :user, url: sessions_path, html: {class: 'form-horizontal'} do |f| %>
+  <%= form_for :user, url: new_session_path, html: {class: 'form-horizontal'} do |f| %>
   <div class="form-group">
     <%= f.label :username, "Username or email", class: 'col-md-4 control-label'%>
     <div class="col-md-6">
