@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Gossip Project 
 
-Things you may want to cover:
+In this application, you can : 
+- Sign up, sign in and sign out
+- See all the gossips (home)
+- Edit, delete a gossip
+- Add a gossip
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To try it out : 
+git clone https://github.com/Virginie-lnr/The_Gossip_Project_with_RoR.git
+$ bundle install 
+$ rails db:create 
+$ rails db:migrate 
