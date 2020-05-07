@@ -35,7 +35,6 @@
     </div>
   </div>
 
-
   <div class="form-group">
     <%= f.label :email, "Email", class: 'col-md-4 control-label'%>
     <div class="col-md-6">
@@ -49,7 +48,6 @@
       <%= select_tag "city", options_from_collection_for_select(City.all, :id, :name), {class: 'form-control', prompt: 'Choose a city'}%>
     </div>
   </div> 
-
 
    <div class="form-group">
     <%= f.label :password, "Password", class: 'col-md-4 control-label'%>

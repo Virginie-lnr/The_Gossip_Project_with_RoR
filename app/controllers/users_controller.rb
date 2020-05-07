@@ -16,10 +16,10 @@ class UsersController < ApplicationController
     user_params = params.require(:user).permit(:username, :first_name, :last_name, :email, :city_id, :password, :password_confirmation)
      @user = User.new(user_params)
      @user.city = City.all.find_by(id: params[:city])
-  
+   
      if @user.valid?
       @user.save
-      redirect_to root_path, success: 'Your account have been created with success! 🎉'
+      redirect_to new_session_path, success: 'Your account has been created with success! 🎉'
      else 
       render 'new'
      end
