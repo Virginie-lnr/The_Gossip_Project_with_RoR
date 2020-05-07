@@ -11,6 +11,7 @@
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
+        <h4>Content:</h4>
         <p> <%=@gossip.content %> </p>
         <footer class="blockquote-footer">Post by <%= link_to "#{@gossip.user.first_name} #{@gossip.user.last_name}", user_path(@gossip.user.id) %> Located : <%=@gossip.user.city.name %> on <%= @gossip.created_at.strftime("%d/%m/%Y") %> at <%= @gossip.created_at.strftime("%H:%I") %>. </cite></footer>
       </blockquote>

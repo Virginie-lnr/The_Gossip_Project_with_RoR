@@ -2,8 +2,8 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4 m-2 ml-4 mt-4 text-center">Welcome on the Gossip page!</h1>
-    <p class="lead m-2 ml-4 mb-5 text-center">Here you will find a list of all gossips :</p>
+    <h1 class="display-4 m-2 ml-4 mt-4 text-center">Welcome to The Gossip Project!</h1>
+    <p class="lead m-2 ml-4 mb-5 text-center"></p>
   </div>
 </div>
 
@@ -16,8 +16,7 @@
           <h5 class="card-title text-secondary"> Title : <%= gossip.title%></h5>
           <p class="card-text"> Author: <%= gossip.user.first_name %> </p>
           <a href="<%= gossip_path(gossip.id) %>" class="btn btn-info text-center">View gossip</a><br><br>
-          <a href="<%= edit_gossip_path(gossip.id) %>" class="btn btn-outline-secondary text-center">Edit gossip</a><br><br>
-          <a href="<%= gossip_path(gossip.id) %>" class="btn btn-danger text-center" data-confirm="are you sure?" data-method="DELETE">Delete gossip</a>
+          
         </div>
 
         <div class="card-footer">
